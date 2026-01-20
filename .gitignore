@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.DS_Store
+*.log
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.env
+.venv
+venv/
+
+# ToolBox-specific
+config.json
+*.backup
+.cache/
