@@ -9,8 +9,13 @@ Entry point executed when:
 """
 import os
 import sys
-from zbrush import commands as zbc
 
+# Add script directory to sys.path so we can import src modules
+_script_dir = os.path.dirname(os.path.abspath(__file__))
+if _script_dir not in sys.path:
+    sys.path.insert(0, _script_dir)
+
+from zbrush import commands as zbc
 from src.core import app
 from src.ui import palette
 
@@ -59,3 +64,6 @@ if __name__ == "__main__":
         main()
     finally:
         _teardown_libs(libs)
+        # Clean up script dir from sys.path
+        if _script_dir in sys.path:
+            sys.path.remove(_script_dir)
